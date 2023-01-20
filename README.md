@@ -66,11 +66,11 @@ View the dapp:
 
 6. Request flight status
 
-![Request flight status](images/6_request_status.PNG)
+![Request flight status](images/6_request_status.png)
 
 7. The status the oracles return can be changed using the buttons
 
-![Change oracle status](images/7_oracles.PNG)
+![Change oracle status](images/7_oracles.png)
 
 8. Withdraw credit
 
