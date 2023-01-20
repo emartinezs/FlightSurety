@@ -78,12 +78,6 @@ export default class Contract {
         await this.flightSuretyData.methods.authorizeCaller(address).send({ from: account});    
     }
 
-    async registerOracle() {
-        let account = await this.getCurrentAccount();
-        let registrationFee = this.web3.utils.toWei('1', 'ether');
-        await this.flightSuretyApp.methods.registerOracle().send({ from: account, value: registrationFee });    
-    }
-
     async getAirline(airlineAddress) {
         let account = await this.getCurrentAccount();
         let result = await this.flightSuretyData.methods.getAirlineInformation(airlineAddress).call({ from: account});   
@@ -109,9 +103,28 @@ export default class Contract {
     async getFlight(flightNumber) {
         let account = await this.getCurrentAccount();
         let result = await this.flightSuretyData.methods.getFlightInformation(flightNumber).call({ from: account});  
+
+        let status = "Unknown";
+        switch (result[1]) {
+            case "10":
+                status = "On Time";
+                break;
+            case "20":
+                status = "Late Airline";
+                break;
+            case "30":
+                status = "Late Weather";
+                break;
+            case "40":
+                status = "Late Technical";
+                break;
+            case "50":
+                status = "Late Other";
+                break;
+        }
         return {
             isRegistered: result[0],
-            statusCode: result[1],
+            statusCode: status,
             timestamp: result[2],
             airline: result[3]
         }

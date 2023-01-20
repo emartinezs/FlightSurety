@@ -33,10 +33,6 @@ window.addEventListener('load', async () => {
         await contract.authorizeAddress(address);
     });
 
-    document.getElementById('register-oracle').addEventListener('click', async () => {
-        await contract.registerOracle();
-    });
-
     document.getElementById('get-airline').addEventListener('click', async () => {
         let airlineAddress = document.getElementById('airline-address').value;
         let result = await contract.getAirline(airlineAddress);
@@ -45,7 +41,6 @@ window.addEventListener('load', async () => {
         document.getElementById('airline-funded').checked = result.isFunded;
         document.getElementById('airline-funded-amount').value = result.fudnedAmount;
     });
-
 
     document.getElementById('register-airline').addEventListener('click', async () => {
         let airlineAddress = document.getElementById('register-airline-address').value;
