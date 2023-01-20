@@ -1,7 +1,10 @@
 # FlightSurety
 
 FlightSurety is a flight insurance Dapp.
+
 FlightSurety is a sample application project for Udacity's Blockchain course.
+
+***
 
 ## Install
 
@@ -9,9 +12,13 @@ FlightSurety is a sample application project for Udacity's Blockchain course.
 
 `truffle compile`
 
+***
+
 ## Running tests
 
 `truffle test`
+
+***
 
 ## Running the application
 
@@ -33,3 +40,38 @@ View the dapp:
 
 `http://localhost:8000`
 
+***
+
+## Using the Application
+
+1. Authorize the app contract
+
+![Authorize address](images/1_authorize_address.png)
+
+2. Fund the first airline
+
+![Fund airline](images/2_fund_airline.png)
+
+3. Register a new airline
+
+![Register airline](images/3_register_airline.png)
+
+4. Register a flight
+
+![Register flight](images/4_register_flight.png)
+
+5. Buy insurance for a flight
+
+![Buy insurance](images/5_buy_insurance.png)
+
+6. Request flight status
+
+![Request flight status](images/6_request_status.PNG)
+
+7. The status the oracles return can be changed using the buttons
+
+![Change oracle status](images/7_oracles.PNG)
+
+8. Withdraw credit
+
+![Withdraw](images/8_withdraw.png)
