@@ -2,10 +2,16 @@ body {
     background-image: url('flight.jpg'); /* Source: iStockPhoto */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .container {
     margin-top: 400px;
+    display: grid;
+    row-gap: 20px;
+}
+
+.form-container {
     background-color: #000;
     opacity: 0.9;
     color: #fff;
@@ -37,6 +43,11 @@ label.form {
     font-size: 14px;
     margin-right: 20px;
 }
+
 input {
     margin-right: 30px;
+}
+
+input:read-only {
+    background-color: #DDD;
 }

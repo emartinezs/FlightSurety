@@ -20,11 +20,110 @@
     </nav>
 
     <main class="container">
+        <div class="form-container">
+            <h2>Administration</h2>
+            <br>
 
-        <div id="display-wrapper" class="top-20">
+            <h4>Contracts</h4>
+            <label class="form">Data Contract Address</label> <input type="text" id="data-contract-address" readonly>
+            <label class="form">Operational</label> <input type="checkbox" id="data-contract-operational-status">
+            <button class="btn btn-primary" id="set-data-operational-status">Set Operational Status</button>
+            <br>
+            <br>
+            <label class="form">App Contract Address</label> <input type="text" id="app-contract-address" readonly>
+            <label class="form">Operational</label> <input type="checkbox" id="app-contract-operational-status">
+            <button class="btn btn-primary" id="set-app-operational-status">Set Operational Status</button>
+            <br>
+            <br>
+
+            <h4>Authorize Address</h4>
+            <label class="form">Address</label> <input type="text" id="address-to-authorize">
+            <button class="btn btn-primary" id="authorize-address">Authorize Address</button>
+            <button class="btn btn-primary" id="register-oracle">Register Oracle</button>
+            <br>
+            <br>
         </div>
-        <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+
+        <div class="form-container">
+            <h2>Airlines</h2>
+            <br>
+
+            <label class="form">Address</label> <input type="text" id="airline-address">
+            <button class="btn btn-primary" id="get-airline">Get Airline Information</button>
+            <br>
+            <label class="form">Name</label> <input type="text" id="airline-name" readonly>
+            <br>
+            <label class="form">Registered</label> <input type="checkbox" id="airline-registered" disabled>
+            <br>
+            <label class="form">Funded</label> <input type="checkbox" id="airline-funded" disabled>
+            <br>
+            <label class="form">Funded Amount (ETH)</label> <input type="text" id="airline-funded-amount" readonly>
+            <br>
+            <br>
+
+            <h4>Register Airline</h4>
+            <label class="form">Address</label> <input type="text" id="register-airline-address">
+            <label class="form">Name</label> <input type="text" id="register-airline-name">
+            <button class="btn btn-primary" id="register-airline">Register</button>
+            <br>
+            <br>
+
+            <h4>Fund Airline</h4>
+            <label class="form">Address</label> <input type="text" id="fund-airline-address">
+            <label class="form">Amount (ETH)</label> <input type="text" id="fund-airline-amount"value=10>
+            <button class="btn btn-primary" id="fund-airline">Fund</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Flights</h2>
+            <br>
+
+            <label class="form">Number</label> <input type="text" id="flight-number">
+            <button class="btn btn-primary" id="get-flight">Get Flight Information</button>
+            <button class="btn btn-primary" id="request-flight-status">Request Status</button>
+            <br>
+            <label class="form">Airline</label> <input type="text" id="flight-airline" readonly>
+            <br>
+            <label class="form">Date</label> <input type="text" id="flight-date" readonly>
+            <br>
+            <label class="form">Status</label> <input type="text" id="flight-status" readonly>
+            <br>
+            <br>
+
+            <h4>Register Flight</h4>
+            <label class="form">Number</label> <input type="text" id="register-flight-number">
+            <label class="form">Date</label> <input type="datetime-local" id="register-flight-date">
+            <button class="btn btn-primary" id="register-flight">Register</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Insurance</h2>
+            <br>
+            <label class="form">Flight</label> <input type="text" id="buy-insurance-flight">
+            <label class="form">Amount (ETH)</label> <input type="text" id="buy-insurance-amount">
+            <button class="btn btn-primary" id="buy-insurance">Buy insurance</button>
+            <br>
+            <br>
+
+            <h4>Withdraw Credit</h4>
+            <label class="form">Balance (ETH)</label> <input type="text" id="balance" readonly>
+            <button class="btn btn-primary" id="get-balance">Check Balance</button>
+            <button class="btn btn-primary" id="withdraw-balance">Withdraw</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Oracles</h2>
+            <br>
+            <h4>Set Status</h4>
+            <button class="btn btn-primary" id="set-status-unknown">Unknown</button>
+            <button class="btn btn-primary" id="set-status-on-time">On Time</button>
+            <button class="btn btn-primary" id="set-status-late-airline">Late Airline</button>
+            <button class="btn btn-primary" id="set-status-late-weather">Late Weather</button>
+            <button class="btn btn-primary" id="set-status-late-technical">Late Technical</button>
+            <button class="btn btn-primary" id="set-status-late-other">Late Other</button>
+        </div>
+
+        <div id="display-wrapper">
         </div>
     </main>
 
