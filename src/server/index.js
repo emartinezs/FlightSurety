@@ -6,7 +6,7 @@ const Web3 = require('web3');
 const app = express();
 app.listen(3000);
 
-let statusCode = 0;
+// let statusCode = 0;
 
 app.get('/api', (req, res) => {
     res.send({
@@ -14,13 +14,13 @@ app.get('/api', (req, res) => {
     })
 })
 
-app.post('/api/status', (req, res) => {
-  statusCode = req.query.statusCode;
-  console.log("Status code set to " + statusCode);
-  res.status(200).send({
-    statusCode: statusCode
-  });
-})
+// app.post('/api/status', (req, res) => {
+//   statusCode = req.query.statusCode;
+//   console.log("Status code set to " + statusCode);
+//   res.status(200).send({
+//     statusCode: statusCode
+//   });
+// })
 
 initialize = async () => {
   let config = Config['localhost'];
@@ -46,12 +46,12 @@ initialize = async () => {
     console.log(`Registered oracle ${account} ${indexes}`);
   }
 
-  // let STATUS_CODE_UNKNOWN = 0;
-  // let STATUS_CODE_ON_TIME = 10;
-  // let STATUS_CODE_LATE_AIRLINE = 20;
-  // let STATUS_CODE_LATE_WEATHER = 30;
-  // let STATUS_CODE_LATE_TECHNICAL = 40;
-  // let STATUS_CODE_LATE_OTHER = 50;
+  let STATUS_CODE_UNKNOWN = 0;
+  let STATUS_CODE_ON_TIME = 10;
+  let STATUS_CODE_LATE_AIRLINE = 20;
+  let STATUS_CODE_LATE_WEATHER = 30;
+  let STATUS_CODE_LATE_TECHNICAL = 40;
+  let STATUS_CODE_LATE_OTHER = 50;
 
   flightSuretyApp.events.OracleRequest({
       fromBlock: 0
@@ -63,19 +63,19 @@ initialize = async () => {
       let index = event.returnValues.index;
       console.log(`Oracle request for flight ${flightNumber} with index ${index}`);
 
-      // let statusCode = STATUS_CODE_UNKNOWN;
-      // let random = Math.floor(Math.random() * 5);
-      // if (random == 0) {
-      //   statusCode = STATUS_CODE_ON_TIME;
-      // } else if (random == 1) {
-      //   statusCode = STATUS_CODE_LATE_AIRLINE;
-      // } else if (random == 2) {
-      //   statusCode = STATUS_CODE_LATE_WEATHER;
-      // } else if (random == 3) {
-      //   statusCode = STATUS_CODE_LATE_TECHNICAL;
-      // } else if (random == 4) {
-      //   statusCode = STATUS_CODE_LATE_OTHER;
-      // }
+      let statusCode = STATUS_CODE_UNKNOWN;
+      let random = Math.floor(Math.random() * 5);
+      if (random == 0) {
+        statusCode = STATUS_CODE_ON_TIME;
+      } else if (random == 1) {
+        statusCode = STATUS_CODE_LATE_AIRLINE;
+      } else if (random == 2) {
+        statusCode = STATUS_CODE_LATE_WEATHER;
+      } else if (random == 3) {
+        statusCode = STATUS_CODE_LATE_TECHNICAL;
+      } else if (random == 4) {
+        statusCode = STATUS_CODE_LATE_OTHER;
+      }
 
       oracles.forEach(async oracle => {
         if (oracle.indexes.includes(index)) {
