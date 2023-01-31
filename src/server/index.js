@@ -64,16 +64,18 @@ initialize = async () => {
       console.log(`Oracle request for flight ${flightNumber} with index ${index}`);
 
       let statusCode = STATUS_CODE_UNKNOWN;
-      let random = Math.floor(Math.random() * 5);
+      let random = Math.floor(Math.random() * 6);
       if (random == 0) {
-        statusCode = STATUS_CODE_ON_TIME;
+        statusCode = STATUS_CODE_UNKNOWN;
       } else if (random == 1) {
-        statusCode = STATUS_CODE_LATE_AIRLINE;
+        statusCode = STATUS_CODE_ON_TIME;
       } else if (random == 2) {
-        statusCode = STATUS_CODE_LATE_WEATHER;
+        statusCode = STATUS_CODE_LATE_AIRLINE;
       } else if (random == 3) {
-        statusCode = STATUS_CODE_LATE_TECHNICAL;
+        statusCode = STATUS_CODE_LATE_WEATHER;
       } else if (random == 4) {
+        statusCode = STATUS_CODE_LATE_TECHNICAL;
+      } else if (random == 5) {
         statusCode = STATUS_CODE_LATE_OTHER;
       }
 
